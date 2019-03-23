@@ -126,7 +126,7 @@ import java.util.Map;
  * or Google "How to Override Static Methods" to learn how to override static methods.
  */
 // reservedDocs:: @param <T> What type of robot.
-public class Robot/*<T extends Robot>*/ extends Object {
+public class Robot/*<T extends Robot>*/ {
 
     /**
      * A variable holding single instance of this {@link Robot}.
@@ -173,10 +173,11 @@ public class Robot/*<T extends Robot>*/ extends Object {
     /**
      * Spawns another {@link Thread} to handle the given code.
      *
-     * <p>
-     * <b>REMEMBER:</b> The Thread will end when {@link Runnable#run()} returns (completes),
-     * Or when the invoking Program terminates!
-     * </p>
+     * <ul>
+	 * <li>The Thread automatically ends when {@link Runnable#run()} execution
+     * returns (completes) or when the invoking Program terminates!
+	 * </li>
+	 * </ul>
      *
      * @param butWaitTillMillis How long to wait in background before the given <b>code</b>
      * executes (in milliseconds).

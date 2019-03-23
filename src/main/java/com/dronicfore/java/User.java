@@ -8,12 +8,12 @@ import java.io.Serializable;
  * A User is a well known {@link Person} that exists or is <b>accepted</b> to be in a platform.
  *
  * <p>
- * For example, this user could represent the sender name of a message.
+ * For example, this user could represent the sender of a message.
  * </p>
  *
  * <b>Optional:</b> You can add the {@code transient} Java keyword on a field variable
  * written in your own {@code User} to protect sensitive information from being <b>Serialized</b>.
- * Just maybe in case someone tries to serialize your user in the future.
+ * Just maybe in case someone tries to Serialize your user in the future.
  *
  * <p>
  * For example:
