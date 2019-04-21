@@ -79,29 +79,6 @@ import java.util.Map;
  * Please do not use this class directly (unless there is a special reason for doing so).
  * You should only extend it and use that one instead.
  *
- * <p>
- * <b>Robot Keywords::::::></b>
- * <pre>
- *     Robot.comeHere()
- *     #goTo(*)
- *     #enter(*)
- *     #create(*)
- *     #doInBackground(*)
- *     #then(*)
- * </pre>
- * </p>
- *
- * <h1>WARNING!</h1>
- *
- * If you're building a low level API then please reserve these keywords
- * for those that may subclass your Robot:
- * <pre>
- *     #goTo(*)
- *     #enter(*)
- * </pre>
- *
- * But if you're smart enough, then you may come up with a unique reasonable signature ;)
- *
  * <center>
  *     <table border=2 summary="Thank Yo!">
  *         <tr>
@@ -129,7 +106,7 @@ import java.util.Map;
 public class Robot/*<T extends Robot>*/ {
 
     /**
-     * A variable holding single instance of this {@link Robot}.
+     * The single instance of this {@link Robot}.
      */
     private static Robot me = null;
 
@@ -157,16 +134,7 @@ public class Robot/*<T extends Robot>*/ {
      * @return A {@link Robot}.
      * That can do <b>anything!</b> on a project.
      */
-//   Before it was -> public static <R extends Robot> R comeHere() {
     public static Robot comeHere() {
-
-        // Check if such class instance haven't been created by the class loader already. (memory managing stuffs)
-//        if(me == null) {
-            // since this is the First time this method is called, then we should bring this Robot to Live!!!! (instantiate).
-//            me = new Robot();
-//        }
-//        return me;
-
         return me != null ? me : (me = new Robot());
     }
 
@@ -206,8 +174,6 @@ public class Robot/*<T extends Robot>*/ {
                 } catch (InterruptedException e) {
 					// we should'nt do anything here when interrupted exception was caught on this Thread
                     e.printStackTrace();
-//                    Logger.getLogger(Robot.class.getName()).log(Level.SEVERE, null, e);
-//                    System.out.println(e);
                 }
             }
         }.start();
