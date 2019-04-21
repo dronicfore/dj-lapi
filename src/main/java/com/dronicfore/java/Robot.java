@@ -158,7 +158,7 @@ public class Robot/*<T extends Robot>*/ {
 	 * </li>
 	 * </ul>
      *
-     * @param wait How long to delay in background before the given <b>code</b>
+     * @param wait The time to delay in background before the given <b>code</b>
      * executes (in milliseconds).
      * Passing a value of {@code 0} (zero) means no delay it should be done immediately.
      *
