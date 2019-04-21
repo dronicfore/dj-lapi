@@ -2,8 +2,10 @@ package com.dronicfore.java;
 
 // (This class was formerly kept in the "package com.dronicfore.java.humanoid.Robot;")
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Calendar;
 import java.util.Collection;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -11,7 +13,7 @@ import java.util.Map;
  *
  * <h1>And Guess What!</h1>
  *
- * You may use {@link #comeHere()} to call this robot from <b>anywhere! or anytime!</b> in your code.
+ * You may use {@link #comeHere()} to call this robot from <b>anywhere! at anytime!</b> in your code.
  *
  * <p>
  * A Robot represents servant in a project created by YOU or Someone
@@ -20,9 +22,7 @@ import java.util.Map;
  * </p>
  *
  * <b>Subclasses may Override {@link #comeHere()} to return their own kind of static
- * {@code Robot#comeHere()} instance</b>.
- *
- * <br>{@link #comeHere()} is the starting point for all Robots APIs.</br>
+ * {@link #comeHere() Robot#comeHere()} instance</b>.
  *
  * <p>
  * Since Java is a step/by/step programing language
@@ -171,41 +171,75 @@ public class Robot/*<T extends Robot>*/ {
     }
 
     /**
-     * Spawns another {@link Thread} to handle the given code.
+     * For example, You can use this to animate or simulate the process of an Object.
+     *
+     * <p>
+     * This spawns another {@link Thread} to handle the given code.
+     * </p>
      *
      * <ul>
-	 * <li>The Thread automatically ends when {@link Runnable#run()} execution
-     * returns (completes) or when the invoking Program terminates!
+	 *
+     * <li>The Thread dies automatically when {@link Runnable#run()} execution is completed
+     * or when the invoking Program terminates!
+	 * </li>
+     *
+     * <ul>
+	 * <li>You should call {@link Thread#interrupt() Thread.currentThread().interrupt()} for
+     * a given condition inside {@link Runnable#run() run()}
+     * If and only if you want that running Thread to be killed immediately.
 	 * </li>
 	 * </ul>
      *
-     * @param butWaitTillMillis How long to wait in background before the given <b>code</b>
+     * @param wait How long to delay in background before the given <b>code</b>
      * executes (in milliseconds).
-     * Passing a value of {@code 0} <b>(Zero)</b> means no delay it should be done immediately.
+     * Passing a value of {@code 0} (zero) means no delay it should be done immediately.
      *
      * @param code The code that will run.
      */
-    // reservedDocs:: @return {@link Robot}.
-    public void doInBackground(final long butWaitTillMillis, final Runnable code/*, final boolean repeatWhenDone*/) {
+    public void doInBackground(final long wait, final Runnable code) {
         new Thread(code) {
             @Override
             public void run() {
                 try {
-                    sleep(butWaitTillMillis);
+                    sleep(wait);
                     super.run();
-//                    if (repeatWhenDone) run(); WARNING: This line sometimes throws java.lang.StackOverflowError. (DO NOT USE!)
-//                    if (repeatWhenDone) doInBackground(this, waitTillMillis, repeatWhenDone); WARNING: This line Hangs! and never returns once execution is done. (DO NOT USE!)
-//                    if (repeatWhenDone) doInBackground(code, waitTillMillis, true);
                 } catch (InterruptedException e) {
 					// we should'nt do anything here when interrupted exception was caught on this Thread
                     e.printStackTrace();
 //                    Logger.getLogger(Robot.class.getName()).log(Level.SEVERE, null, e);
-//                    Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, e);
+//                    System.out.println(e);
                 }
             }
         }.start();
+    }
 
-//        return this;
+    /**
+     * <p>
+     * <b>An operation that sends this Robot to a Folder in your computer.</b>
+     * </p>
+     *
+     * Use {@link FileInputStream}(s) to read a File in that folder.
+     *
+     * @param folder The File this Robot should enter.
+     *
+     * @return The {@link File} this robot was sent to.
+     *
+     * @see File
+     * @see File#createTempFile(String, String)
+     */
+    public File enter(File folder, String... continueWithPath) {
+        // initialize a root reference to return if (continueWithPath[].length == 0)
+        String pathString = "";
+
+        // This loop will only execute if (continueWithPath[].length > 0)! (or was provided)
+        for (String v: continueWithPath) {
+            // modify pathString since continueWithPath was provided
+            // pathString = pathString+"/"+"v";
+            // pathString += "/"+"v";
+            pathString = pathString.concat(File.separatorChar+v);
+        }
+
+        return new File(folder, pathString);
     }
 
     /**
@@ -218,33 +252,29 @@ public class Robot/*<T extends Robot>*/ {
      *
      * @return The object this Robot was sent to.
      *
-     * @throws IllegalArgumentException If object refers to this same robot instance.
+     * @throws IllegalArgumentException If object is the same robot.
      *
      * @see Collection
      * @see Map
-     * @see Date
+     * @see Calendar
      * @see Thread
      */
     public <Object> Object goTo(Object object) {
-//        if(object.equals(this)) throw new UnsupportedOperationException("This robot cannot goto that Robot because they're both the same robots. Instead use the other robot directly.");
-//        if(this == object) throw new UnsupportedOperationException();
         if(this == object) throw new IllegalArgumentException();
         return object;
     }
 
-    /**
+    /*
      * <b>Yay! I'm here So what can i do for you again? <i>¯\_(ツ)_/¯</i></b>.
      */
-    public Robot then(Runnable... continueWithAction) {
-
+//    public Robot then(Runnable... continueWithAction) {
         // This loop will only execute if (continueWithAction[].length > 0)! (or was provided)
-        for (Runnable v: continueWithAction) {
+//        for (Runnable v: continueWithAction) {
             // invoke each runnable run() method on continueWithAction[] one by one
-            v.run();
-        }
-
-        return this;
-    }
+//            v.run();
+//        }
+//        return this;
+//    }
 
 }
 

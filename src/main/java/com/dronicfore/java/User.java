@@ -3,12 +3,13 @@ package com.dronicfore.java;
 // (This class was formerly kept in the "package com.dronicfore.java.social.User;")
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 /**
- * A User is a well known {@link Person} that exists or is <b>accepted</b> to be in a platform.
+ * A User is a recognised {@link Person} that exists or is <b>accepted</b> to be in a platform.
  *
  * <p>
- * For example, this user could represent the sender of a message.
+ * For example, This user could represent the sender of a message.
  * </p>
  *
  * <b>Optional:</b> You can add the {@code transient} Java keyword on a field variable
@@ -87,13 +88,20 @@ public class User extends Person implements Serializable {
     }
 
     /**
+     * @return My Current Time.
+     */
+    protected Calendar getCurrentCalendar() {
+        return Calendar.getInstance();
+    }
+
+    /**
      * Tests If both users are the same.
      *
      * @return true If the invoking {@code User} is equal to that given {@code user}</b>
      * object, otherwise false.
      */
     @Override
-    public final boolean equals(Object user) {
+    public boolean equals(Object user) {
         return user instanceof User && user.hashCode() == this.hashCode();
     }
 
@@ -103,7 +111,7 @@ public class User extends Person implements Serializable {
      * @see #getUid()
      */
     @Override
-    public final int hashCode() {
+    public int hashCode() {
         return this.getUid().hashCode();
     }
 
