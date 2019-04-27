@@ -3,6 +3,7 @@ package com.dronicfore.java;
 // (This class was formerly kept in the "package com.dronicfore.java.social.User;")
 
 import java.io.Serializable;
+import java.net.InetAddress;
 import java.util.Calendar;
 
 /**
@@ -66,6 +67,13 @@ public class User extends Person implements Serializable {
 
         this.myName = userName;
         this.myId = userId;
+    }
+
+    /**
+     * Creates a User.
+     */
+    public User(InetAddress address) {
+        this(address.getHostName(), address.getHostAddress());
     }
 
     /**

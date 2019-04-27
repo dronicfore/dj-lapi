@@ -160,7 +160,7 @@ public class Robot/*<T extends Robot>*/ {
      *
      * @param wait The time to delay in background before the given <b>code</b>
      * executes (in milliseconds).
-     * Passing a value of {@code 0} (zero) means no delay it should be done immediately.
+     * Passing a value of {@code 0} (zero) is the same as {@link #doInBackground(Runnable)}.
      *
      * @param code The code that will run.
      */
@@ -177,6 +177,25 @@ public class Robot/*<T extends Robot>*/ {
                 }
             }
         }.start();
+    }
+
+    /**
+     * This spawns another {@link Thread} to handle the given code.
+     *
+     * <ul>
+     *
+     * <li>The Thread dies automatically when {@link Runnable#run()} execution is completed
+     * or when the invoking Program terminates!
+     * </li>
+     *
+     * </ul>
+     *
+     * @param code The code that will run.
+     *
+     * @see #doInBackground(long, Runnable)
+     */
+    public final void doInBackground(Runnable code) {
+        this.doInBackground(0, code);
     }
 
     /**
