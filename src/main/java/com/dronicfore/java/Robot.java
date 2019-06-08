@@ -16,7 +16,7 @@ import java.util.Map;
  * You may use {@link #comeHere()} to call this robot from <b>anywhere! at anytime!</b> in your code.
  *
  * <p>
- * A Robot represents servant in a project created by YOU or Someone
+ * A Robot represents servant in a project created by YOU or The Company
  * just to finally highlight important parts in the 'Source Code' or 'API'
  * and satisfy the users (programmers) outside that may interact with them.
  * </p>
@@ -61,18 +61,18 @@ import java.util.Map;
  * </ul>
  *
  * <p>
- * So what're you still waiting forr??
+ * So what're you still waiting for??
  * </p>
  * Go ahead and start building yours to make our future lives easier! :)
  *
  * <h1>How Robots are named?</h1>
  *
- * For example, <b>MyCompanyNameRobot</b>, <b>FirebaseRobot, GoogleRobot, FacebookRobot,
+ * For example, <b>MyCompanyNameRobot, FirebaseRobot, GoogleRobot, FacebookRobot,
  * AndroidRobot, WhatsAppRobot, TwitterRobot, YoutubeRobot,</b> and so on...
- * These are all Robots solving a lot of problems related to and maintained by those companies!
+ * These are Robots solving problems related to and maintained by those companies!
  *
  * <ul>
- * <li>A Brilliant Company will have only <b>One</b> Robot.</li>
+ * <li>A Brilliant Company will have only <b>One</b> Robot that does the whole job for us.</li>
  * For example, The <b>FirebaseRobot</b> ;).
  * </ul>
  *
@@ -89,18 +89,7 @@ import java.util.Map;
  *
  * @since Jan/14/2019, 12:43 AM, GMT +1 (Night)
  *
- * @author Moses Katsina
- */
-/* reservedDocs::
- * <p>Since Java didn't allowed static generics,
- * For Example: {@code public static T comeHere(){...};} isn't possible.
- * But assuming they did, All you have to do is extend this Robot and you'll get the comeHere() method
- * magically returning your own Robot class instance directly for free!.
- * Well, maybe they have a good reason for not allowing that.
- * </p>
- *
- * Please See the Java Language Specification "Hiding Methods"
- * or Google "How to Override Static Methods" to learn how to override static methods.
+ * @author <a href="https://web.facebook.com/kling360">Moses Katsina</a>
  */
 // reservedDocs:: @param <T> What type of robot.
 public class Robot/*<T extends Robot>*/ {
@@ -262,11 +251,6 @@ public class Robot/*<T extends Robot>*/ {
      * @return The object this Robot was sent to.
      *
      * @throws IllegalArgumentException If object is the same robot.
-     *
-     * @see Collection
-     * @see Map
-     * @see Calendar
-     * @see Thread
      */
     public final <Object> Object goTo(Object object) {
         if(this == object) throw new IllegalArgumentException();
