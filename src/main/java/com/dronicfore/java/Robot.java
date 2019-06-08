@@ -139,7 +139,7 @@ public class Robot/*<T extends Robot>*/ {
     }
 
     /**
-     * For example, You can use this to animate or simulate the process of an Object.
+     * For example, You can use this to <b>Animate</b> or <b>Simulate</b> the process of an Object.
      *
      * <p>
      * This spawns another {@link Thread} to handle the given code.
@@ -169,18 +169,19 @@ public class Robot/*<T extends Robot>*/ {
             @Override
             public void run() {
                 try {
-                    sleep(wait);
+//                    sleep(wait); Before
+                    join(wait); // Now
                     super.run();
                 } catch (InterruptedException e) {
-					// we should'nt do anything here when interrupted exception was caught on this Thread
-                    e.printStackTrace();
+                    // we should not do anything here when interrupted exception was caught on this Thread
+//                    e.printStackTrace();
                 }
             }
         }.start();
     }
 
     /**
-     * This spawns another {@link Thread} to handle the given code.
+     * This spawns another {@link Thread} to handle the given code immediately.
      *
      * <ul>
      *
@@ -193,9 +194,32 @@ public class Robot/*<T extends Robot>*/ {
      * @param code The code that will run.
      *
      * @see #doInBackground(long, Runnable)
+     * @see #doPauseOrResume(Thread)
      */
     public final void doInBackground(Runnable code) {
-        this.doInBackground(0, code);
+        this.doInBackground(0L, code);
+    }
+
+    /**
+     * For example, You can only use this to <b>pause</b> or <b>resume</b> execution of a running Java Program.
+     *
+     * @param thread The Thread to Pause or Resume.
+     * @see Thread
+     */
+    public void doPauseOrResume(Thread thread) {
+        switch (thread.getState()) {
+            case RUNNABLE:
+                try {
+                    thread.join();
+                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+                }
+                break;
+
+            case WAITING:
+                thread.interrupt();
+                break;
+        }
     }
 
     /**
@@ -244,7 +268,7 @@ public class Robot/*<T extends Robot>*/ {
      * @see Calendar
      * @see Thread
      */
-    public <Object> Object goTo(Object object) {
+    public final <Object> Object goTo(Object object) {
         if(this == object) throw new IllegalArgumentException();
         return object;
     }
