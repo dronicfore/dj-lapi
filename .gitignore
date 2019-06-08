@@ -4,3 +4,6 @@
 /workspace.xml
 
 /.gradle
+*.bin
+*.lock
+.idea/workspace.xml
