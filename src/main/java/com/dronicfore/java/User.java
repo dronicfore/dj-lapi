@@ -56,6 +56,7 @@ public class User extends Person implements Serializable {
 
     /**
      * Creates a User.
+     *
      * @param userName The name of the User.
      * @param userId The User ID.
      *
@@ -71,6 +72,8 @@ public class User extends Person implements Serializable {
 
     /**
      * Creates a User.
+     *
+     * @param address The Address.
      */
     public User(InetAddress address) {
         this(address.getHostName(), address.getHostAddress());
@@ -105,7 +108,7 @@ public class User extends Person implements Serializable {
     /**
      * Tests If both users are the same.
      *
-     * @return true If the invoking {@code User} is equal to that given {@code user}</b>
+     * @return true If the invoking {@code User} is equal to that given <b>user</b>
      * object, otherwise false.
      */
     @Override

@@ -31,7 +31,7 @@ import java.io.FileInputStream;
  *
  * <h1>Why Use Robots?</h1>
  *
- * <i>Here's <b>The Buzz Words</b> about Robots:</i>
+ * <i>Here's <b>The Buzzwords</b> about Robots:</i>
  *
  * <ul>
  * <li>Robots will <b>show the way you started!</b></li>
@@ -42,7 +42,7 @@ import java.io.FileInputStream;
  * <li>Robots will not <b>make you suffer!</b></li>
  *
  * <li>Since Java is an Object Oriented Programming Language (OOP)
- * <br><b>Robots will make it plain!</b></br>
+ * <br><b>Robots will make it plain!</b>
  * </li>
  *
  * <li>Computers follow instructions, That's why you <b>Command a Robot to {@link #comeHere()}!</b></li>
@@ -53,7 +53,7 @@ import java.io.FileInputStream;
  * <li>Some Robots will require you to talk much (writing more lines of code a.k.a boilerplate codes) before
  * they can get your job done.
  * <br>But who cares? <i>¯\_(ツ)_/¯</i> <b>Just accept the fact it must be written</b>.
- * That's the style of Java!</br>
+ * <br>That's the style of Java!
  * </li>
  * </ul>
  *
@@ -69,8 +69,9 @@ import java.io.FileInputStream;
  * These are Robots solving problems related to and maintained by those companies!
  *
  * <ul>
- * <li>A Brilliant Company will have only <b>One</b> Robot that does the whole job for us.</li>
- * For example, The <b>FirebaseRobot</b> ;).
+ * <li>A Brilliant Company will have only <b>One</b> Robot that does the whole job for us.
+ * <br>For example, The {@code FirebaseRobot} ;).
+ * </li>
  * </ul>
  *
  * Please do not use this class directly (unless there is a special reason for doing so).
@@ -84,7 +85,7 @@ import java.io.FileInputStream;
  *     </table>
  * </center>
  *
- * @since Jan/14/2019, 12:43 AM, GMT +1 (Night)
+ * @since Jan/14/2019, 12:43 AM, GMT +1 (Morning)
  *
  * @author <a href="https://web.facebook.com/kling360">Moses Katsina</a>
  */
@@ -132,12 +133,10 @@ public class Robot/*<T extends Robot>*/ {
      * </p>
      *
      * <ul>
-	 *
      * <li>The Thread dies automatically when {@link Runnable#run()} execution is completed
      * or when the invoking Program terminates!
 	 * </li>
      *
-     * <ul>
 	 * <li>You should call {@link Thread#interrupt() Thread.currentThread().interrupt()} for
      * a given condition inside {@link Runnable#run() run()}
      * If and only if you want that running Thread to be killed immediately.
