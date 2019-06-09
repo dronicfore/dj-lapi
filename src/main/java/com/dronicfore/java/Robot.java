@@ -129,7 +129,7 @@ public class Robot/*<T extends Robot>*/ {
      * For example, You can use this to <b>Animate</b> or <b>Simulate</b> the process of an Object.
      *
      * <p>
-     * This spawns another {@link Thread} to handle the given code.
+     * This spawns another {@link Thread} to run the given code.
      * </p>
      *
      * <ul>
@@ -145,16 +145,16 @@ public class Robot/*<T extends Robot>*/ {
      *
      * @param wait The time to delay in background before the given <b>code</b>
      * executes (in milliseconds).
-     * Passing a value of {@code 0} (zero) is the same as {@link #doInBackground(Runnable)}.
+     * Passing a value of {@code 0} (zero) is the same as {@link #doAnotherThread(Runnable)}.
      *
      * @param code The code that will run.
      */
-    public void doInBackground(final long wait, final Runnable code) {
+    public void doAnotherThread(final long wait, final Runnable code) {
         new Thread(code) {
             @Override
             public void run() {
                 try {
-//                    sleep(wait); Before
+//                    sleep(wait); // Before
                     join(wait); // Now
                     super.run();
                 } catch (InterruptedException e) {
@@ -166,7 +166,7 @@ public class Robot/*<T extends Robot>*/ {
     }
 
     /**
-     * This spawns another {@link Thread} to handle the given code immediately.
+     * This spawns another {@link Thread} to run the given code immediately.
      *
      * <ul>
      *
@@ -178,11 +178,11 @@ public class Robot/*<T extends Robot>*/ {
      *
      * @param code The code that will run.
      *
-     * @see #doInBackground(long, Runnable)
+     * @see #doAnotherThread(long, Runnable)
      * @see #doPauseOrResume(Thread)
      */
-    public final void doInBackground(Runnable code) {
-        this.doInBackground(0L, code);
+    public final void doAnotherThread(Runnable code) {
+        this.doAnotherThread(0L, code);
     }
 
     /**
