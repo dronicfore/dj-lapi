@@ -4,9 +4,6 @@ package com.dronicfore.java;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Map;
 
 /**
  * A Robot is an {@link Object} that can do <b>anything!</b> for you <b>:)</b> .
