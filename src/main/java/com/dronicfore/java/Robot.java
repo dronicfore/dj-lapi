@@ -128,9 +128,8 @@ public class Robot/*<T extends Robot>*/ {
     /**
      * For example, You can use this to <b>Animate</b> or <b>Simulate</b> the process of an Object.
      *
-     * <p>
+     * <br>
      * This spawns another {@link Thread} to run the given code.
-     * </p>
      *
      * <ul>
      * <li>The Thread dies automatically when {@link Runnable#run()} execution is completed
@@ -143,8 +142,7 @@ public class Robot/*<T extends Robot>*/ {
 	 * </li>
 	 * </ul>
      *
-     * @param wait The time to delay in background before the given <b>code</b>
-     * executes (in milliseconds).
+     * @param wait The time to wait before the given <b>code</b> executes (in milliseconds).
      * Passing a value of {@code 0} (zero) is the same as {@link #doAnotherThread(Runnable)}.
      *
      * @param code The code that will run.
@@ -154,9 +152,9 @@ public class Robot/*<T extends Robot>*/ {
             @Override
             public void run() {
                 try {
-//                    sleep(wait); // Before
-                    join(wait); // Now
+                    sleep(wait);
                     super.run();
+//                    join(wait);
                 } catch (InterruptedException e) {
                     // we should not do anything here when interrupted exception was caught on this Thread
 //                    e.printStackTrace();
@@ -169,11 +167,9 @@ public class Robot/*<T extends Robot>*/ {
      * This spawns another {@link Thread} to run the given code immediately.
      *
      * <ul>
-     *
      * <li>The Thread dies automatically when {@link Runnable#run()} execution is completed
      * or when the invoking Program terminates!
      * </li>
-     *
      * </ul>
      *
      * @param code The code that will run.
