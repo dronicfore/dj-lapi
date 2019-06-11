@@ -1,7 +1,5 @@
 package com.dronicfore.java;
 
-// (This class was formerly kept in the "package com.dronicfore.java.social.Person;")
-
 /**
  * A Person is someone you might know or see in somewhere.
  * <br>For example, Hey! who's that person? <i>¯\_(ツ)_/¯</i>.
@@ -23,7 +21,7 @@ package com.dronicfore.java;
  *
  * @author Moses Katsina
  */
-public abstract class Person /*Principal, NamedStuff (An interface implemented by objects that can be named.)*/ {
+public abstract class Person {
 
     /**
      * The name of the person.

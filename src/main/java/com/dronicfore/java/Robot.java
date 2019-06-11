@@ -1,7 +1,5 @@
 package com.dronicfore.java;
 
-// (This class was formerly kept in the "package com.dronicfore.java.humanoid.Robot;")
-
 import java.io.File;
 import java.io.FileInputStream;
 
@@ -102,16 +100,10 @@ public class Robot/*<T extends Robot>*/ {
      * unless you have a special reason for doing so.
      *
      * <p>
-     * The Users (programmers) will use {@code comeHere()} to call a Robot!
+     * The users (programmers) will use {@code comeHere()} to call a Robot.
      * </p>
      *
      * @see #comeHere()
-     */
-    /*reservedDocs::
-     * To avoid confusions, only one instance of each Robot should exist in our project.
-     * That's why we're making this class a Singleton, By hiding Constructors.
-     * This will prevent developers (like us) from creating multiple Robots (instances) of This
-     * Same Type in our projects ;).
      */
     protected Robot() {}
 
@@ -119,7 +111,7 @@ public class Robot/*<T extends Robot>*/ {
      * Allows you to interact with this robot.
      *
      * @return A {@link Robot}.
-     * That can do <b>anything!</b> on a project.
+     * That can do <b>anything</b> on a project.
      */
     public static Robot comeHere() {
         return me != null ? me : (me = new Robot());
@@ -138,7 +130,7 @@ public class Robot/*<T extends Robot>*/ {
      *
 	 * <li>You should call {@link Thread#interrupt() Thread.currentThread().interrupt()} for
      * a given condition inside {@link Runnable#run() run()}
-     * If and only if you want that running Thread to be killed immediately.
+     * Only if you want that running Thread to be killed immediately.
 	 * </li>
 	 * </ul>
      *
@@ -175,7 +167,6 @@ public class Robot/*<T extends Robot>*/ {
      * @param code The code that will run.
      *
      * @see #doAnotherThread(long, Runnable)
-     * @see #doPauseOrResume(Thread)
      */
     public final void doAnotherThread(Runnable code) {
         this.doAnotherThread(0L, code);
@@ -185,6 +176,7 @@ public class Robot/*<T extends Robot>*/ {
      * For example, You can only use this to <b>pause</b> or <b>resume</b> execution of a running Java Program.
      *
      * @param thread The Thread to Pause or Resume.
+     *
      * @see Thread
      */
     public void doPauseOrResume(Thread thread) {

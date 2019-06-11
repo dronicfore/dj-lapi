@@ -1,7 +1,5 @@
 package com.dronicfore.java;
 
-// (This class was formerly kept in the "package com.dronicfore.java.social.User;")
-
 import java.io.Serializable;
 import java.net.InetAddress;
 import java.util.Calendar;
@@ -38,16 +36,6 @@ import java.util.Calendar;
  * @see Serializable
  *
  * @author Moses Katsina
- */
-/* reservedDocs::
- * <p>
- * <b>HEY!</b> there's no way we can magically get the details of the user
- * you want without an official known approach.
- *
- * <p>
- * It will be <b>yours</b> or <b>their</b> responsibility to provide the details
- * of this user by any means (either directly or indirectly from a <b>Server</b> or coming from a <b>User Interface</b>).
- * </p>
  */
 public class User extends Person implements Serializable {
 
@@ -134,20 +122,5 @@ public class User extends Person implements Serializable {
     public String toString() {
         return this.getName();
     }
-
-    // Java Object Serialization starts [HERE]
-//    private void writeObject(ObjectOutputStream os) throws IOException {
-//        os.writeLong(this.getTimeImpl());
-//        User me = this;
-//        os.writeObject(me);
-//        os.defaultWriteObject();
-//    }
-
-//    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-//        this.fastTime = var1.readLong();
-//        in.defaultReadObject();
-//    }
-    // @see How java.util.Date implements Serializable (In Source code)
-    // Java Object Serialization ends [HERE]
 
 }
