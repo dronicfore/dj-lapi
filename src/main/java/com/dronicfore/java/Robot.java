@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 
 /**
- * A Robot is an {@link Object} that can do <b>anything!</b> for you <b>:)</b> .
+ * A Robot is an {@link Object} that can do <b>anything</b> for you <b>:)</b> .
  *
  * <h1>And Guess What!</h1>
  *
@@ -134,19 +134,19 @@ public class Robot/*<T extends Robot>*/ {
 	 * </li>
 	 * </ul>
      *
-     * @param wait The time to wait before the given <b>code</b> executes (in milliseconds).
-     * Passing a value of {@code 0} (zero) is the same as {@link #doAnotherThread(Runnable)}.
+     * @param delay The milliseconds to wait before the given <b>code</b> executes.
+     * Passing a value of {@code 0} (zero) is the same as {@link #doInAnotherThread(Runnable)}.
      *
      * @param code The code that will run.
      */
-    public void doAnotherThread(final long wait, final Runnable code) {
+    public void doInAnotherThread(final long delay, final Runnable code) {
         new Thread(code) {
             @Override
             public void run() {
                 try {
-                    sleep(wait);
+                    sleep(delay);
                     super.run();
-//                    join(wait);
+//                    join(delay);
                 } catch (InterruptedException e) {
                     // we should not do anything here when interrupted exception was caught on this Thread
 //                    e.printStackTrace();
@@ -166,10 +166,10 @@ public class Robot/*<T extends Robot>*/ {
      *
      * @param code The code that will run.
      *
-     * @see #doAnotherThread(long, Runnable)
+     * @see #doInAnotherThread(long, Runnable)
      */
-    public final void doAnotherThread(Runnable code) {
-        this.doAnotherThread(0L, code);
+    public final void doInAnotherThread(Runnable code) {
+        this.doInAnotherThread(0L, code);
     }
 
     /**
@@ -179,13 +179,15 @@ public class Robot/*<T extends Robot>*/ {
      *
      * @see Thread
      */
-    public void doPauseOrResume(Thread thread) {
+    protected void doPauseOrResume(Thread thread) {
         switch (thread.getState()) {
             case RUNNABLE:
-                try {
-                    thread.join();
-                } catch (InterruptedException e) {
-//                    e.printStackTrace();
+                synchronized (thread) {
+                    try {
+                        thread.wait();
+                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+                    }
                 }
                 break;
 
