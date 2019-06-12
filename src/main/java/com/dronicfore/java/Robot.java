@@ -179,7 +179,7 @@ public class Robot/*<T extends Robot>*/ {
      *
      * @see Thread
      */
-    protected void doPauseOrResume(Thread thread) {
+    public void doPauseOrResume(Thread thread) {
         switch (thread.getState()) {
             case RUNNABLE:
                 synchronized (thread) {

@@ -27,7 +27,32 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Robot.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dronicfore/java/Robot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
+              <folding>
+                <element signature="docComment;class#Robot#0" expanded="false" />
+                <element signature="docComment;field#me#0;class#Robot#0" expanded="false" />
+                <element signature="docComment;method#Robot#0;class#Robot#0" expanded="false" />
+                <element signature="docComment;method#comeHere#0;class#Robot#0" expanded="false" />
+                <element signature="docComment;method#doInAnotherThread#0;class#Robot#0" expanded="false" />
+                <element signature="method#doInAnotherThread#0;class#Robot#0" expanded="false" />
+                <element signature="docComment;method#doInAnotherThread#1;class#Robot#0" expanded="false" />
+                <element signature="docComment;method#doPauseOrResume#0;class#Robot#0" expanded="false" />
+                <element signature="method#doPauseOrResume#0;class#Robot#0" expanded="false" />
+                <element signature="docComment;method#enter#0;class#Robot#0" expanded="false" />
+                <element signature="method#enter#0;class#Robot#0" expanded="false" />
+                <element signature="docComment;method#goTo#0;class#Robot#0" expanded="false" />
+                <element signature="method#goTo#0;class#Robot#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -416,9 +441,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -441,7 +464,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -570,6 +595,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -582,7 +608,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27231467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -612,6 +638,7 @@
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
+            <element signature="docComment;class#Robot#0" expanded="false" />
             <element signature="docComment;field#me#0;class#Robot#0" expanded="false" />
             <element signature="docComment;method#Robot#0;class#Robot#0" expanded="false" />
             <element signature="docComment;method#comeHere#0;class#Robot#0" expanded="false" />
@@ -651,6 +678,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="docComment;class#Robot#0" expanded="false" />
             <element signature="docComment;field#me#0;class#Robot#0" expanded="false" />
             <element signature="docComment;method#Robot#0;class#Robot#0" expanded="false" />
             <element signature="docComment;method#comeHere#0;class#Robot#0" expanded="false" />
@@ -672,6 +700,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="docComment;class#Robot#0" expanded="false" />
             <element signature="docComment;field#me#0;class#Robot#0" expanded="false" />
             <element signature="docComment;method#Robot#0;class#Robot#0" expanded="false" />
             <element signature="docComment;method#comeHere#0;class#Robot#0" expanded="false" />
@@ -708,9 +737,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dronicfore/java/Robot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="55" lean-forward="false" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
+        <state relative-caret-position="164">
+          <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
           <folding>
+            <element signature="docComment;class#Robot#0" expanded="false" />
             <element signature="docComment;field#me#0;class#Robot#0" expanded="false" />
             <element signature="docComment;method#Robot#0;class#Robot#0" expanded="false" />
             <element signature="docComment;method#comeHere#0;class#Robot#0" expanded="false" />
