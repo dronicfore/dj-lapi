@@ -3,6 +3,7 @@ package com.dronicfore.java;
 import java.io.Serializable;
 import java.net.InetAddress;
 import java.util.Calendar;
+import java.util.UUID;
 
 /**
  * A User is a recognised {@link Person} that exists or is <b>accepted</b> to be in a platform.
@@ -59,6 +60,14 @@ public class User extends Person implements Serializable {
     }
 
     /**
+     * Creates a User with generated ID.
+     * @param userName The name of the User.
+     */
+    public User(String userName) {
+        this(userName, UUID.randomUUID().toString());
+    }
+
+    /**
      * Creates a User.
      *
      * @param address The Address.
@@ -82,7 +91,7 @@ public class User extends Person implements Serializable {
      *
      * @see #hashCode()
      */
-    protected String getUid() {
+    protected String getId() {
         return this.myId;
     }
 
@@ -107,11 +116,11 @@ public class User extends Person implements Serializable {
     /**
      * @return The unique {@link Object#hashCode()} representation of this user.
      *
-     * @see #getUid()
+     * @see #getId()
      */
     @Override
     public int hashCode() {
-        return this.getUid().hashCode();
+        return this.getId().hashCode();
     }
 
     /**
