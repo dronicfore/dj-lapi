@@ -124,9 +124,9 @@ public class Robot/*<T extends Robot>*/ {
      * 
      * @param object The object to be searched for.
      * @param where The place to search.
-     * @return The List of objects that was found.
+     * @return The List of objects describing where it is found.
      */
-    public <T> List<T> search(Object object, T... where) {
+    public <T> List<T> doFind(Object object, T... where) {
 	List<T> list = new ArrayList<T>(where.length);
 	for (int i = 0; i < where.length; i++) {
 	    String x = where[i] != null ? where[i].toString().toLowerCase() : "";
