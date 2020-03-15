@@ -38,7 +38,7 @@ import java.util.UUID;
  *
  * @author Moses Katsina
  */
-public class User extends Person implements Serializable {
+public class User extends Person implements Serializable, Comparable<User> {
 
     private String myName = null;
     private String myId = null;
@@ -68,20 +68,12 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     * Creates a User.
+     * Creates a User representing the given InetAddress.
      *
-     * @param address The Address.
+     * @param address The InetAddress.
      */
     public User(InetAddress address) {
         this(address.getHostName(), address.getHostAddress());
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public final String getName() {
-        return this.myName;
     }
 
     /**
@@ -109,7 +101,7 @@ public class User extends Person implements Serializable {
      * object, otherwise false.
      */
     @Override
-    public boolean equals(Object user) {
+    public final boolean equals(Object user) {
         return user instanceof User && user.hashCode() == this.hashCode();
     }
 
@@ -119,7 +111,7 @@ public class User extends Person implements Serializable {
      * @see #getId()
      */
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return this.getId().hashCode();
     }
 
@@ -132,4 +124,8 @@ public class User extends Person implements Serializable {
         return this.getName();
     }
 
+    @Override
+    public int compareTo(User user) {
+        return user.getName().compareTo(this.getName());
+    }
 }
