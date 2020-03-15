@@ -2,8 +2,6 @@ package com.dronicfore.java;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  * A Robot is an {@link Object} that can do <b>anything</b> for you <b>:)</b> .
@@ -117,23 +115,6 @@ public class Robot/*<T extends Robot>*/ {
      */
     public static Robot comeHere() {
         return me != null ? me : (me = new Robot());
-    }
-
-    /**
-     * Finds where the given object is located.
-     * 
-     * @param object The object to be searched for.
-     * @param where The place to search.
-     * @return The List of objects describing where it is found.
-     */
-    public <T> List<T> doFind(Object object, T... where) {
-	List<T> list = new ArrayList<T>(where.length);
-	for (int i = 0; i < where.length; i++) {
-	    String x = where[i] != null ? where[i].toString().toLowerCase() : "";
-	    String y = object.toString().toLowerCase();
-	    if (x.contains(y)) list.add(where[i]);
-	}
-	return list;
     }
 
     /**
