@@ -34,11 +34,13 @@ import java.util.UUID;
  * Also, {@code static} variables are not saved.
  * </p>
  * 
+ * @param <T> The user to represent.
+ * 
  * @see Serializable
  *
  * @author Moses Katsina
  */
-public class User extends Person implements Serializable, Comparable<User> {
+public class User<T extends User> extends Person implements Serializable, Comparable<T> {
 
     private String myName = null;
     private String myId = null;
@@ -132,8 +134,11 @@ public class User extends Person implements Serializable, Comparable<User> {
         return this.getName();
     }
 
+    /**
+     * Compares the User by name.
+     */
     @Override
-    public int compareTo(User user) {
+    public int compareTo(T user) {
         return user.getName().compareTo(this.getName());
     }
 }
