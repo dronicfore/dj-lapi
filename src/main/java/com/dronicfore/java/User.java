@@ -77,6 +77,14 @@ public class User extends Person implements Serializable, Comparable<User> {
     }
 
     /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected String getName() {
+        return this.myName;
+    }
+    
+    /**
      * A Unique ID differentiating this user from other users.
      *
      * @return This User ID.
