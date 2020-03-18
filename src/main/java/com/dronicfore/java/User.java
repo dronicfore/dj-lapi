@@ -139,6 +139,6 @@ public class User<T extends User> extends Person implements Serializable, Compar
      */
     @Override
     public int compareTo(T user) {
-        return user.getName().compareTo(this.getName());
+        return this.getName().compareTo(user.getName());
     }
 }
