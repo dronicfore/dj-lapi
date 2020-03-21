@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.net.InetAddress;
 import java.util.Calendar;
 import java.util.UUID;
+import java.net.ConnectException;
+import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * A User is a recognised {@link Person} that exists or is <b>accepted</b> to be in a platform.
@@ -100,8 +103,25 @@ public class User<T extends User> extends Person implements Serializable, Compar
     /**
      * @return My Current Time.
      */
-    protected Calendar getCurrentCalendar() {
+    protected Calendar getCalendar() {
         return Calendar.getInstance();
+    }
+
+    /**
+     * @return true If the User has connected or has an active internet connection.
+     */
+    public boolean hasNetworkConnection() {
+        try {
+            URL url = new URL("https://www.google.com"); // throws MalformedURLException
+	    URLConnection urlConnection = url.openConnection(); // throws IOException
+	    urlConnection.setConnectTimeout(1);
+	    urlConnection.connect(); // throws IOException
+	    return true; // connected
+	} catch (ConnectException e) {
+	    return true; // connected
+	} catch (Exception e) {
+	    return false; // not connected
+	}
     }
 
     /**
