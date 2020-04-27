@@ -45,30 +45,30 @@ import java.net.URLConnection;
  */
 public class User<T extends User> extends Person implements Serializable, Comparable<T> {
 
-    private String myName = null;
-    private String myId = null;
+    private CharSequence myName = null;
+    private String myID = null;
 
     /**
      * Creates a User.
      *
      * @param userName The name of the User.
-     * @param userId The User ID.
+     * @param userID The User ID.
      *
      * @throws IllegalArgumentException If an argument contains no value.
      */
-    public User(String userName, String userId) {
+    public User(CharSequence userName, String userID) {
         if(userName == null || userName.isEmpty()) throw new IllegalArgumentException("A User name is required");
-        if(userId == null || userId.isEmpty()) throw new IllegalArgumentException(this+" does not have an ID, Please provide one");
+        if(userID == null || userID.isEmpty()) throw new IllegalArgumentException(this+" does not have an ID, Please provide one");
 
         this.myName = userName;
-        this.myId = userId;
+        this.myID = userID;
     }
 
     /**
      * Creates a User with generated ID.
      * @param userName The name of the User.
      */
-    public User(String userName) {
+    public User(CharSequence userName) {
         this(userName, UUID.randomUUID().toString());
     }
 
@@ -85,7 +85,7 @@ public class User<T extends User> extends Person implements Serializable, Compar
      * {@inheritDoc}
      */
     @Override
-    protected String getName() {
+    protected CharSequence getName() {
         return this.myName;
     }
     
@@ -96,8 +96,8 @@ public class User<T extends User> extends Person implements Serializable, Compar
      *
      * @see #hashCode()
      */
-    protected String getId() {
-        return this.myId;
+    protected String getID() {
+        return this.myID;
     }
 
     /**
@@ -138,11 +138,11 @@ public class User<T extends User> extends Person implements Serializable, Compar
     /**
      * @return The unique {@link Object#hashCode()} representation of this user.
      *
-     * @see #getId()
+     * @see #getID()
      */
     @Override
     public final int hashCode() {
-        return this.getId().hashCode();
+        return this.getID().hashCode();
     }
 
     /**
@@ -151,7 +151,7 @@ public class User<T extends User> extends Person implements Serializable, Compar
      */
     @Override
     public String toString() {
-        return this.getName();
+        return this.getName().toString();
     }
 
     /**
@@ -159,6 +159,6 @@ public class User<T extends User> extends Person implements Serializable, Compar
      */
     @Override
     public int compareTo(T user) {
-        return this.getName().compareTo(user.getName());
+        return this.getName().toString().compareTo(user.getName().toString());
     }
 }
