@@ -138,9 +138,11 @@ public class Robot/*<T extends Robot>*/ {
      * Passing a value of {@code 0} (zero) is the same as {@link #doInAnotherThread(Runnable)}.
      *
      * @param code The code that will run.
+     * 
+     * @return The executing Thread.
      */
-    public void doInAnotherThread(final long delay, final Runnable code) {
-        new Thread(code) {
+    public Thread doInAnotherThread(final long delay, final Runnable code) {
+        Thread thread = new Thread(code) {
             @Override
             public void run() {
                 try {
@@ -152,7 +154,9 @@ public class Robot/*<T extends Robot>*/ {
 //                    e.printStackTrace();
                 }
             }
-        }.start();
+        };
+        thread.start();
+        return thread;
     }
 
     /**
@@ -165,11 +169,13 @@ public class Robot/*<T extends Robot>*/ {
      * </ul>
      *
      * @param code The code that will run.
+     * 
+     * @return The executing Thread.
      *
      * @see #doInAnotherThread(long, Runnable)
      */
-    public final void doInAnotherThread(Runnable code) {
-        this.doInAnotherThread(0L, code);
+    public final Thread doInAnotherThread(Runnable code) {
+        return this.doInAnotherThread(0L, code);
     }
 
     /**
