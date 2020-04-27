@@ -57,7 +57,7 @@ public class User<T extends User> extends Person implements Serializable, Compar
      * @throws IllegalArgumentException If an argument contains no value.
      */
     public User(CharSequence userName, String userID) {
-        if(userName == null || userName.isEmpty()) throw new IllegalArgumentException("A User name is required");
+        if(userName == null || userName.toString().isEmpty()) throw new IllegalArgumentException("A User name is required");
         if(userID == null || userID.isEmpty()) throw new IllegalArgumentException(this+" does not have an ID, Please provide one");
 
         this.myName = userName;
