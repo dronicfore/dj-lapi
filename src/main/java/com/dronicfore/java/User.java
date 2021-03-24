@@ -85,7 +85,7 @@ public class User<T extends User> extends Person implements Serializable, Compar
      * {@inheritDoc}
      */
     @Override
-    protected CharSequence getName() {
+    public CharSequence getName() {
         return this.myName;
     }
     
@@ -96,7 +96,7 @@ public class User<T extends User> extends Person implements Serializable, Compar
      *
      * @see #hashCode()
      */
-    protected String getID() {
+    public String getID() {
         return this.myID;
     }
 
